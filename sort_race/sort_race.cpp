@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 
+
 using namespace std;
 
 vector<int> GenerateData(int size, int max_value = INT_MAX);
