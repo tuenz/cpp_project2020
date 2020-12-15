@@ -5,7 +5,8 @@ using namespace std;
 
 
 // Просеиваем элементы
-void sow_elements(vector<int>& numbers, int n, int i) {
+template <typename T>
+void sow_elements(vector<T>& numbers, int n, int i) {
 
     int largest = i;
 
@@ -37,7 +38,8 @@ void sow_elements(vector<int>& numbers, int n, int i) {
 
 
 // Основная функция сортировки 
-void heapsort_algo(vector<int>& sequence, int n) {
+template <typename T>
+void heapsort_algo(vector<T>& sequence, int n) {
 
     // Группировка массива
     for (int i = n / 2 - 1; i >= 0; i--) {
@@ -60,6 +62,23 @@ void heapsort_algo(vector<int>& sequence, int n) {
 
 // Аналог main
 vector<int> heapsort_by_makarov(vector<int> data)
+{
+
+    // Размер массива 
+    int n = data.size();
+
+    // Запуск алгоритм
+    heapsort_algo(data, n);
+
+    for (int i : data) {
+        cout << i << " ";
+    }
+
+    return data;
+
+}
+
+vector<double> heapsort_by_makarov_double(vector<double> data)
 {
 
     // Размер массива 

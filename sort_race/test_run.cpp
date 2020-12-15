@@ -3,11 +3,15 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
+#include <random>
 
 using namespace std;
 
 using Participant = std::vector<int>(*)(std::vector<int>);
+using Participant_doubles = std::vector<double>(*)(std::vector<double>);
 
+
+// «апуск с целыми числами
 void Run(string method_name, Participant p, vector<int> data)
 {
 	auto start = chrono::system_clock::now();
@@ -21,11 +25,39 @@ void Run(string method_name, Participant p, vector<int> data)
 }
 
 
+// «апуск с числами с плавающей зап€той
+void Run_doubles(string method_name, Participant_doubles p, vector<double> data)
+{
+	auto start = chrono::system_clock::now();
+	vector<double> res = p(data);
+	auto stop = chrono::system_clock::now();
+	auto time = chrono::duration_cast<chrono::microseconds>(stop - start).count();
+
+	cout << method_name << "\t"
+		<< data.size() << "\t"
+		<< (is_sorted(res.begin(), res.end()) ? to_string(time) + "\tmcs" : "failed") << endl;
+}
+
+
+// √енерируем целочисленный массив данных
 vector<int> GenerateData(int size, int max_value = INT_MAX)
 {
 	//generate random data or read data from your file
 	vector<int> data(size);
 	for (int& d : data)
 		d = rand() % max_value;
+	return data;
+}
+
+
+// √енерируем массив числе с плавающей точкой
+vector<double> GenerateData_doubles(int size)
+{
+	vector<double> data(size);
+
+	for (double& d : data) {
+		d = double(rand() % 1000) * 0.33;
+	}
+
 	return data;
 }
