@@ -5,7 +5,6 @@
 #include <vector>
 #include <string>
 
-
 using namespace std;
 
 vector<int> GenerateData(int size, int max_value = INT_MAX);
@@ -17,17 +16,16 @@ void Run(string method_name, Participant p, vector<int> data);
     Run(#x, x, data);           \
 }
 
-//place your method name here
 vector<int> std_sort(vector<int>);
-
+vector<int> merge_sort_by_danilova(vector<int> data);
 
 int main()
 {
     const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
-    for (int n : N)
-    {
-        auto data = GenerateData(n);
-        RUN(std_sort);
-		//run your method here
-    }
+   for (int n : N)
+   {
+       auto data = GenerateData(n);
+       RUN(std_sort);
+       RUN(merge_sort_by_danilova);
+   }
 }
