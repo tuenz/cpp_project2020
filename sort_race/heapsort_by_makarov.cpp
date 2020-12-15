@@ -65,7 +65,7 @@ vector<int> heapsort_by_makarov(vector<int> data)
 {
 
     // Размер массива 
-    int n = data.size();
+    size_t n = data.size();
 
     // Запуск алгоритм
     heapsort_algo(data, n);
@@ -78,7 +78,7 @@ vector<double> heapsort_by_makarov_double(vector<double> data)
 {
 
     // Размер массива 
-    int n = data.size();
+    size_t n = data.size();
 
     // Запуск алгоритм
     heapsort_algo(data, n);

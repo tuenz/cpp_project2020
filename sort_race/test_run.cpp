@@ -5,6 +5,8 @@
 #include <algorithm>
 #include <random>
 #include <cmath>
+#include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -62,3 +64,25 @@ vector<double> GenerateData_doubles(int size)
 
 	return data;
 }
+
+
+// Чтение данных из файла
+vector<int> read_data()
+{
+
+	vector <int> data;
+
+	int current;
+
+	ifstream in("input.txt");
+
+	if (in.is_open()) {
+		while (in >> current) {
+			data.push_back(current);
+		}
+	}
+
+	return data;
+}
+
+

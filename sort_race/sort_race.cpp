@@ -14,6 +14,7 @@ using namespace std;
 // Векторы с набором данных
 vector<int> GenerateData(int size, int power, int max_value = INT_MAX);
 vector<double> GenerateData_doubles(int size);
+vector<int> read_data();
 
 
 //
@@ -37,6 +38,7 @@ void Run_doubles(string method_name, Participant_doubles p, vector<double> data)
 
 //place your method name here
 vector<int> std_sort(vector<int>);
+vector<double> std_sort_double(vector<double>);
 
 // makarov, heapsort, reboots
 vector<int> heapsort_by_makarov(vector<int>);
@@ -92,7 +94,7 @@ int main()
                 auto data = GenerateData_doubles(n);
 
                 // default sorting algo
-                //RUN_Doubles(std_sort_double);
+               RUN_Doubles(std_sort_double);
 
                 // makarov, heapsort
                 RUN_Doubles(heapsort_by_makarov_double);
@@ -101,6 +103,15 @@ int main()
         }
 
         case 4: {
+
+            auto data = read_data();
+            
+            // default sorting algo
+            RUN(std_sort);
+
+            // makarov, heapsort
+            RUN(heapsort_by_makarov);
+
             break;
         }
     }
