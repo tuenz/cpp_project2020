@@ -42,10 +42,10 @@ vector<int>Sort_by_Byankina(vector<int>data)
 }
 vector<double>Sort_by_Byankina_d(vector<double>data)
 {
-    if (!data.empty()) {
+  /*  if (!data.empty()) {
         int n = data.size();
         QuikcSort_by_Byankina(data, 0, n - 1);
-    }
+    }*/
     return data;
 
 }

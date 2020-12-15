@@ -10,18 +10,32 @@
 using namespace std;
 
 vector<int> GenerateData(int size, int n, int max_value = INT_MAX);
+vector<double> GenerateData_doubles(int size);
 vector<int> read_data();
+
 using Participant = std::vector<int>(*)(std::vector<int>);
+using Participant_doubles = std::vector<double>(*)(std::vector<double>);
+
 void Run(string method_name, Participant p, vector<int> data);
+void Run_doubles(string method_name, Participant_doubles p, vector<double> data);
 
 
 #define RUN(x) {                \
     Run(#x, x, data);           \
 }
 
+#define RUN_Doubles(x){         \
+    Run_doubles(#x, x, data);   \
+}
+
 vector<int> std_sort(vector<int>);
+vector<double> std_sort(vector<double> data);
+
 vector<int> merge_sort_by_danilova(vector<int> data);
+vector<double> merge_sort_by_danilova(vector<double> data);
+
 vector<int> Sort_by_Byankina(vector<int>);
+vector<double>Sort_by_Byankina_d(vector<double>data);
 
 
 int main()
@@ -61,9 +75,10 @@ int main()
             for (int n : N)
             {
 
-                //auto data = GenerateData_doubles(n);
-                //RUN_Doubles(std_sort_double);
-                //RUN_Doubles(Sort_by_Byankina_d);
+                auto data = GenerateData_doubles(n);
+                RUN_Doubles(std_sort);
+                RUN_Doubles(merge_sort_by_danilova);
+               // RUN_Doubles(Sort_by_Byankina_d);
 
             }
             break;
