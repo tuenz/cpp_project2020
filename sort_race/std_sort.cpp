@@ -14,4 +14,3 @@ vector<double> sort_for_integers_only(vector<double> data)
 	return data;
 }
 
-hello
