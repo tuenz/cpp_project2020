@@ -32,10 +32,11 @@ vector<int> read_data()
 {
 
 	vector <int> data;
-
+	string filename;
 	int current;
-
-	ifstream in("input.txt");
+	cout << "Filename: ";
+	cin >> filename;
+	ifstream in(filename+".txt");
 
 	if (in.is_open()) {
 		while (in >> current) {

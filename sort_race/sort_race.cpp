@@ -85,13 +85,4 @@ int main()
     }
 }
 
-//int main()
-//{
-//    const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
-//   for (int n : N)
-//   {
-//       auto data = GenerateData(n);
-//       RUN(std_sort);
-//       RUN(merge_sort_by_danilova);
-//   }
-//}
+
