@@ -16,21 +16,25 @@ void MergeSort(vector<T>& data, vector<T>& buf, const int& start, const int& end
         buf.at(CurrentPosition) = data.at(CurrentPosition);
 	int IndexFirstPart = start;
 	int IndexSecondPart = middle + 1;
-    for (int CurrentPosition = start; CurrentPosition <= end; CurrentPosition++) {
-
-        if (IndexFirstPart > middle) {
+    for (int CurrentPosition = start; CurrentPosition <= end; CurrentPosition++) 
+    {
+        if (IndexFirstPart > middle) 
+        {
             data.at(CurrentPosition) = buf.at(IndexSecondPart);
 			IndexSecondPart++;
         }
-        else if (IndexSecondPart > end) {
+        else if (IndexSecondPart > end) 
+        {
             data.at(CurrentPosition) = buf.at(IndexFirstPart);
 			IndexFirstPart++;
         }
-        else if (buf[IndexSecondPart] < buf[IndexFirstPart]) {
+        else if (buf[IndexSecondPart] < buf[IndexFirstPart]) 
+        {
             data.at(CurrentPosition) = buf.at(IndexSecondPart);
 			IndexSecondPart++;
         }
-        else {
+        else 
+        {
             data.at(CurrentPosition) = buf.at(IndexFirstPart);
 			IndexFirstPart++;
         }

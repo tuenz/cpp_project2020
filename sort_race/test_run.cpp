@@ -21,28 +21,30 @@ void Run(string method_name, Participant p, vector<int> data)
 		<< (is_sorted(res.begin(), res.end()) ? to_string(time) + "\tmcs" : "failed") << endl;
 }
 
-vector<int> GenerateData(int size, int max_value = INT_MAX)
+vector<int> GenerateData(int size, int n, int max_value = INT_MAX)
 {
 	vector<int> data(size);
 	for (int& d : data)
-		d = rand() % max_value;
+		d = pow(-1, n) * (rand() % max_value);
 	return data;
 }
+
 vector<int> read_data()
 {
-
 	vector <int> data;
 	string filename;
 	int current;
 	cout << "Filename: ";
 	cin >> filename;
 	ifstream in(filename+".txt");
-
-	if (in.is_open()) {
-		while (in >> current) {
+	if (in.is_open())
+	{
+		while (in >> current) 
+		{
 			data.push_back(current);
 		}
 	}
-
+	else
+		data = {};
 	return data;
 }

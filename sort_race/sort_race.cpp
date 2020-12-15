@@ -9,7 +9,7 @@
 
 using namespace std;
 
-vector<int> GenerateData(int size, int max_value = INT_MAX);
+vector<int> GenerateData(int size, int n, int max_value = INT_MAX);
 vector<int> read_data();
 using Participant = std::vector<int>(*)(std::vector<int>);
 void Run(string method_name, Participant p, vector<int> data);
@@ -29,13 +29,13 @@ int main()
     while (1)
     {
         welcome();
-        int user_point = user_choise("Select data source: ");
         const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
-        switch (user_point) {
-
-        case 1: {
-            for (int n : N) {
-
+        switch (user_choise("Select data source: "))
+        {
+        case 1:
+        {
+            for (int n : N)
+            {
                 auto data = GenerateData(n, 2);
                 RUN(std_sort);
                 RUN(merge_sort_by_danilova);
@@ -44,10 +44,10 @@ int main()
             break;
         }
 
-        case 2: {
-
-            for (int n : N) {
-
+        case 2:
+        {
+            for (int n : N) 
+            {
                 auto data = GenerateData(n, 1);
                 RUN(std_sort);
                 RUN(merge_sort_by_danilova);
@@ -55,9 +55,11 @@ int main()
             }
             break;
         }
-        case 3: {
+        case 3:
+        {
 
-            for (int n : N) {
+            for (int n : N)
+            {
 
                 //auto data = GenerateData_doubles(n);
                 //RUN_Doubles(std_sort_double);
@@ -66,22 +68,23 @@ int main()
             }
             break;
         }
-        case 4: {
-
+        case 4:
+        {
             auto data = read_data();
             RUN(std_sort);
             RUN(merge_sort_by_danilova);
             RUN(Sort_by_Byankina);
-
             break;
         }
         case 0:
+        {
 
             return 0;
             break;
 
         }
         cout << endl;
+        }
     }
 }
 
