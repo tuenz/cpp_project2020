@@ -1,8 +1,11 @@
 #include <vector>
 #include <algorithm>
+#include <string>
+#include <typeinfo>
 using namespace std;
 
-void MergeSort(vector<int>& data, vector<int>& buf, const int& start, const int& end)
+template <typename T>
+void MergeSort(vector<T>& data, vector<T>& buf, const int& start, const int& end)
 {
     if (end <= start)
         return;
@@ -33,17 +36,32 @@ void MergeSort(vector<int>& data, vector<int>& buf, const int& start, const int&
         }
     }
 }
-
+ 
 vector<int> merge_sort_by_danilova(vector<int> data)
 {
-	if (is_sorted(data.begin(), data.end()))
-		return data;
+    //std::string info = typeid(data[0]).name();
+	//if (is_sorted(data.begin(), data.end()) || (info == "float") || (info == "double"))
+    if (is_sorted(data.begin(), data.end()))
+        return data;
     vector <int> buf(data.size());
 	MergeSort(data, buf, 0, data.size()-1);
 	return data;
 }
 
+vector<char> merge_sort_by_danilova(vector<char> data)
+{
+    if (is_sorted(data.begin(), data.end()))
+        return data;
+    vector <char> buf(data.size());
+    MergeSort(data, buf, 0, data.size() - 1);
+    return data;
+}
+
 vector<double> merge_sort_by_danilova(vector<double> data)
+{
+    return data;
+}
+vector<float> merge_sort_by_danilova(vector<float> data)
 {
     return data;
 }

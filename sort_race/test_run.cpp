@@ -15,7 +15,7 @@ void Run(string method_name, Participant p, vector<int> data)
 	auto stop = chrono::system_clock::now();
 	auto time = chrono::duration_cast<chrono::microseconds>(stop - start).count();
 
-	cout << method_name << "\t"
+	cout << method_name << "\t\t"
 		<< data.size() << "\t"
 		<< (is_sorted(res.begin(), res.end()) ? to_string(time) + "\tmcs" : "failed") << endl;
 }
