@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="sort_race.cpp" />
+    <ClCompile Include="heapsort_by_makarov.cpp" />
     <ClCompile Include="std_sort.cpp" />
     <ClCompile Include="test_run.cpp" />
   </ItemGroup>
