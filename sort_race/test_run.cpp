@@ -1,10 +1,11 @@
-#include <vector>
+﻿#include <vector>
 #include <chrono>
 #include <string>
 #include <iostream>
 #include <algorithm>
 #include <random>
 #include <cmath>
+#include<fstream>
 
 using namespace std;
 
@@ -57,6 +58,24 @@ vector<double> GenerateData_doubles(int size)
 
 	for (double& d : data) {
 		d = double(rand() % 1000) * 0.33;
+	}
+
+	return data;
+}
+
+vector<int> read_data()
+{
+
+	vector <int> data;
+
+	int current;
+
+	ifstream in("input.txt");
+
+	if (in.is_open()) {
+		while (in >> current) {
+			data.push_back(current);
+		}
 	}
 
 	return data;

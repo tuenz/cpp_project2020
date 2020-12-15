@@ -1,80 +1,51 @@
-//#include<vector>
-//using namespace std;
-//int Partition(vector <int>& data, int l, int r)
-//{
-//	int x = data[r];
-//	int less = l;
-//
-//	for (int i = l; i < r; ++i) {
-//		if (data[i] <= x) {
-//			swap(data[i], data[less]);
-//			++less;
-//		}
-//	}
-//	swap(data[less], data[r]);
-//	return less;
-//}
-//void QuickSortImpl(vector<int>& data, int l, int r) {
-//	if (l < r) {
-//		int q = Partition(data, l, r);
-//		QuickSortImpl(data, l, q - 1);
-//		QuickSortImpl(data, q + 1, r);
-//	}
-//}
-//
-//void QuickSort(vector<int>& data) {
-//	if (!data.empty()) {
-//		QuickSortImpl(data, 0, data.size() - 1);
-//	}
-//}
-//
-//vector<int> QuickSort_by_Ageenko(vector<int> data) {
-//	QuickSort(data);
-//	return data;
-//}
-#include <vector>
+#include<vector>
 using namespace std;
-
-void quickSort(vector <int> arr, int left, int right) {
-    int i = left, j = right;
-    int tmp;
-    int mid = arr[(left + right) / 2];
-
-    /* partition */
-    while (i <= j) {
-        while (arr[i] < mid)
+template <typename T>
+void QuikcSort_by_Byankina(vector<T>&mass, int start, int end) {          //передаем в функцию массив и его размер
+    int i = start;                                      //индекс первого элемента массива
+    int j = end;                               //индекс последнего элемента массива
+    int mid = mass[(end+start) / 2];            //значение средннго элемента массива, с которым будем сравнивать
+    //поиск и перестановка элементов больше/меньше среднего
+    do {
+        while (mass[i] < mid) {                      //сравниваем значения элементов первой половины со значением среднего элемента
             i++;
-        while (arr[j] > mid)
+        }
+        while (mass[j] > mid) {                      //сравниваем значения элементов второй половины со значением среднего элемента
             j--;
-        if (i <= j) {
-            swap(arr[i], arr[j]);
+        }
+        if (i <= j)
+        {
+            swap(mass[i], mass[j]);
             i++;
             j--;
         }
-    };
+    } while (i <= j);
+    //сортируем отдельно левый кусок массива
+    if (j > start) {
+         QuikcSort_by_Byankina(mass, start, j );
+    }
 
-    /* recursion */
-    if (left < j)
-        quickSort(arr, left, j);
-    if (i < right)
-        quickSort(arr, i, right);
-
+    //сортируем отдельно правый кусок массива
+    if (i < end) {
+        QuikcSort_by_Byankina(mass, i, end);
+    }
 }
-//vector<int> sort(vector<int> data)
-//{
-//    quickSort(data, 0, data.size() - 1);
-//	return data;
-//}
-//vector<double> sort_for_integers_only(vector<double> data)
-//{
-//	//return unsorted vector if data doesn't match your method
-//	return data;
-//}
-vector<int> QuickSort(vector<int>& data) {
+//template <typename T>
+vector<int>Sort_by_Byankina(vector<int>data)
+{
 	if (!data.empty()) {
         int n = data.size();
-		quickSort(data, 0, n - 1);
+        QuikcSort_by_Byankina(data, 0, n - 1);
 	}
 	return data;
+
+}
+vector<double>Sort_by_Byankina_d(vector<double>data)
+{
+    if (!data.empty()) {
+        int n = data.size();
+        QuikcSort_by_Byankina(data, 0, n - 1);
+    }
+    return data;
 
 }
