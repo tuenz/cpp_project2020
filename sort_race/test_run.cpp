@@ -4,6 +4,7 @@
 #include <iostream>
 #include <algorithm>
 #include <random>
+#include <cmath>
 
 using namespace std;
 
@@ -40,12 +41,12 @@ void Run_doubles(string method_name, Participant_doubles p, vector<double> data)
 
 
 // Генерируем целочисленный массив данных
-vector<int> GenerateData(int size, int max_value = INT_MAX)
+vector<int> GenerateData(int size, int n, int max_value = INT_MAX)
 {
 	//generate random data or read data from your file
 	vector<int> data(size);
 	for (int& d : data)
-		d = rand() % max_value;
+		d = pow(-1, n) * (rand() % max_value);
 	return data;
 }
 

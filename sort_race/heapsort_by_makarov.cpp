@@ -70,10 +70,6 @@ vector<int> heapsort_by_makarov(vector<int> data)
     // Запуск алгоритм
     heapsort_algo(data, n);
 
-    for (int i : data) {
-        cout << i << " ";
-    }
-
     return data;
 
 }
@@ -86,10 +82,6 @@ vector<double> heapsort_by_makarov_double(vector<double> data)
 
     // Запуск алгоритм
     heapsort_algo(data, n);
-
-    for (int i : data) {
-        cout << i << " ";
-    }
 
     return data;
 

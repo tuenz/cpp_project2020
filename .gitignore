@@ -353,3 +353,7 @@ MigrationBackup/
 .ionide/
 *.filters
 *.filters
+*.vcxproj
+*.filters
+sort_race/sort_race.vcxproj.filters
+sort_race/sort_race.vcxproj
