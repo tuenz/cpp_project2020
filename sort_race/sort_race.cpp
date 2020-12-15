@@ -34,8 +34,8 @@ vector<double> std_sort(vector<double> data);
 vector<int> merge_sort_by_danilova(vector<int> data);
 vector<double> merge_sort_by_danilova(vector<double> data);
 
-vector<int> Sort_by_Byankina(vector<int>);
-vector<double>Sort_by_Byankina_d(vector<double>data);
+vector<int> QuickSort_by_Byankina_(vector<int>);
+vector<double>QuickSort_by_Byankina_(vector<double>data);
 
 
 int main()
@@ -53,7 +53,7 @@ int main()
                 auto data = GenerateData(n, 2);
                 RUN(std_sort);
                 RUN(merge_sort_by_danilova);
-                RUN(Sort_by_Byankina);
+                RUN(QuickSort_by_Byankina_);
             }
             break;
         }
@@ -65,7 +65,7 @@ int main()
                 auto data = GenerateData(n, 1);
                 RUN(std_sort);
                 RUN(merge_sort_by_danilova);
-                RUN(Sort_by_Byankina);
+                RUN(QuickSort_by_Byankina_);
             }
             break;
         }
@@ -78,7 +78,7 @@ int main()
                 auto data = GenerateData_doubles(n);
                 RUN_Doubles(std_sort);
                 RUN_Doubles(merge_sort_by_danilova);
-               // RUN_Doubles(Sort_by_Byankina_d);
+                RUN_Doubles(QuickSort_by_Byankina_);
 
             }
             break;
@@ -88,7 +88,7 @@ int main()
             auto data = read_data();
             RUN(std_sort);
             RUN(merge_sort_by_danilova);
-            RUN(Sort_by_Byankina);
+            RUN(QuickSort_by_Byankina_);
             break;
         }
         case 0:

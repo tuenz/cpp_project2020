@@ -31,7 +31,7 @@ void QuikcSort_by_Byankina(vector<T>& mass, int start, int end) {          //пер
     }
 }
 //template <typename T>
-vector<int>Sort_by_Byankina(vector<int>data)
+vector<int>QuickSort_by_Byankina_(vector<int>data)
 {
     if (!data.empty()) {
         int n = data.size();
@@ -40,12 +40,7 @@ vector<int>Sort_by_Byankina(vector<int>data)
     return data;
 
 }
-vector<double>Sort_by_Byankina_d(vector<double>data)
+vector<double>QuickSort_by_Byankina_(vector<double>data)
 {
-  /*  if (!data.empty()) {
-        int n = data.size();
-        QuikcSort_by_Byankina(data, 0, n - 1);
-    }*/
     return data;
-
 }
