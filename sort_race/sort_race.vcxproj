@@ -151,6 +151,7 @@
     <ClCompile Include="Insertion_sort_Stepuro.cpp" />
     <ClCompile Include="merge_sort_by_danilova.cpp" />
     <ClCompile Include="sort_race.cpp" />
+    <ClCompile Include="heapsort_by_makarov.cpp" />
     <ClCompile Include="std_sort.cpp" />
     <ClCompile Include="tm_datasets.cpp" />
   </ItemGroup>
