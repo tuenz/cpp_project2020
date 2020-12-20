@@ -18,3 +18,13 @@ vector<int> ReadDataFromFileDanilova(string filename)
 		data = {};
 	return data;
 }
+
+vector<double> GenerateDoublesDanilova(int size)
+{
+	vector<double> data(size);
+	for (double& d : data) 
+	{
+		d = double(rand() % 1000) * 0.33;
+	}
+	return data;
+}
