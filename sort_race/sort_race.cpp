@@ -1,106 +1,55 @@
 ﻿// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#include <array>
 #include <vector>
+#include <chrono>
+#include <algorithm>
 #include <string>
 #include <iostream>
-#include "utils.h" 
+#include "DataSetRegister.h"
+#include "Participants.h"
 
 using namespace std;
-
-vector<int> GenerateData(int size, int n, int max_value = INT_MAX);
-vector<double> GenerateData_doubles(int size);
-vector<int> read_data();
-
-using Participant = std::vector<int>(*)(std::vector<int>);
-using Participant_doubles = std::vector<double>(*)(std::vector<double>);
-
-void Run(string method_name, Participant p, vector<int> data);
-void Run_doubles(string method_name, Participant_doubles p, vector<double> data);
-
 
 #define RUN(x) {                \
     Run(#x, x, data);           \
 }
+template <typename T>
+void Run(string method_name, Participant<T> p, vector<T> data)
+{
+    auto start = chrono::system_clock::now();
+    vector<T> res = p(data);
+    auto stop = chrono::system_clock::now();
+    auto time = chrono::duration_cast<chrono::microseconds>(stop - start).count();
 
-#define RUN_Doubles(x){         \
-    Run_doubles(#x, x, data);   \
+    cout << method_name << "\t"
+        << data.size() << "\t"
+        << (is_sorted(res.begin(), res.end()) ? to_string(time) + "\tmcs" : "failed") << endl;
 }
-
-vector<int> std_sort(vector<int>);
-vector<double> std_sort(vector<double> data);
-
-vector<int> merge_sort_by_danilova(vector<int> data);
-vector<double> merge_sort_by_danilova(vector<double> data);
-
-vector<int> QuickSort_by_Byankina_(vector<int>);
-vector<double>QuickSort_by_Byankina_(vector<double>data);
-
 
 int main()
 {
-    while (1)
+    auto intDataSets = GenerateIntDataSets();
+    for (auto& ds : intDataSets)
     {
-        welcome();
-        const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
-        switch (user_choise("Select data source: "))
-        {
-        case 1:
-        {
-            for (int n : N)
-            {
-                auto data = GenerateData(n, 2);
-                RUN(std_sort);
-                RUN(merge_sort_by_danilova);
-                RUN(QuickSort_by_Byankina_);
-            }
-            break;
-        }
+        cout << ds.description << endl << endl;
+        auto& data = ds.data;
+        RUN(std_sort);
+        //run your method here
 
-        case 2:
-        {
-            for (int n : N) 
-            {
-                auto data = GenerateData(n, 1);
-                RUN(std_sort);
-                RUN(merge_sort_by_danilova);
-                RUN(QuickSort_by_Byankina_);
-            }
-            break;
-        }
-        case 3:
-        {
 
-            for (int n : N)
-            {
+        cout << endl << "**************************" << endl << endl;
+    }
 
-                auto data = GenerateData_doubles(n);
-                RUN_Doubles(std_sort);
-                RUN_Doubles(merge_sort_by_danilova);
-                RUN_Doubles(QuickSort_by_Byankina_);
+    auto doubleDataSets = GenerateDoubleDataSets();
+    for (auto& ds : doubleDataSets)
+    {
+        cout << ds.description << endl << endl;
+        auto& data = ds.data;
+        RUN(sort_for_integers_only);
+        //run your method here
 
-            }
-            break;
-        }
-        case 4:
-        {
-            auto data = read_data();
-            RUN(std_sort);
-            RUN(merge_sort_by_danilova);
-            RUN(QuickSort_by_Byankina_);
-            break;
-        }
-        case 0:
-        {
 
-            return 0;
-            break;
-
-        }
-        cout << endl;
-        }
+        cout << endl << "**************************" << endl << endl;
     }
 }
-
-
