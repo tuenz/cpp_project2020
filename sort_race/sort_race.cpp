@@ -38,6 +38,8 @@ int main()
         RUN(merge_sort_by_danilova);
         RUN(Insertion_sort_Stepuro);
         RUN(heapsort_by_makarov);
+        RUN(QuickSort_by_Byankina);
+
 
 
         cout << endl << "**************************" << endl << endl;
@@ -52,6 +54,7 @@ int main()
         RUN(merge_sort_by_danilova);
         RUN(Insertion_sort_Stepuro);
         RUN(heapsort_by_makarov_double);
+        RUN(QuickSort_by_Byankina);
 
 
         cout << endl << "**************************" << endl << endl;
