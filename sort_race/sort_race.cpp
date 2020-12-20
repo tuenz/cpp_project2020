@@ -35,7 +35,7 @@ int main()
         cout << ds.description << endl << endl;
         auto& data = ds.data;
         RUN(std_sort);
-        //run your method here
+        RUN(merge_sort_by_danilova);
 
 
         cout << endl << "**************************" << endl << endl;
@@ -47,7 +47,7 @@ int main()
         cout << ds.description << endl << endl;
         auto& data = ds.data;
         RUN(sort_for_integers_only);
-        //run your method here
+        RUN(merge_sort_by_danilova);
 
 
         cout << endl << "**************************" << endl << endl;
