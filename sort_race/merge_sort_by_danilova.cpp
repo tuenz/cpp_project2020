@@ -41,8 +41,6 @@ void MergeSort_Danilova(vector<T>& data, vector<T>& buf, const int& start, const
 
 vector<int> merge_sort_by_danilova(vector<int> data)
 {
-    //if (is_sorted(data.begin(), data.end()))
-      //  return data;
     vector <int> buf(data.size());
     MergeSort_Danilova(data, buf, 0, data.size() - 1);
     return data;
@@ -50,8 +48,6 @@ vector<int> merge_sort_by_danilova(vector<int> data)
 
 vector<double> merge_sort_by_danilova(vector<double> data)
 {
-    //if (is_sorted(data.begin(), data.end()))
-      //  return data;
     vector <double> buf(data.size());
     MergeSort_Danilova(data, buf, 0, data.size() - 1);
     return data;
