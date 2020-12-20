@@ -14,6 +14,9 @@ std::vector<DataSet<int>> GenerateIntDataSets()
         { "random integer", GenerateData(10) },
         { "random integer", GenerateData(100) },
         { "random integer", GenerateData(1000) },
+        { "Danilova team-already sorted integer", ReadDataFromFileDanilova("DanilovaAlreadySortedInt")},
+        { "Danilova team-partly sorted integer", ReadDataFromFileDanilova("DanilovaPartlySortedInt")},
+        { "Danilova team-worst for quicksort integer", ReadDataFromFileDanilova("DanilovaWorstQuick")},
     };
 }
 std::vector<DataSet<double>> GenerateDoubleDataSets()
