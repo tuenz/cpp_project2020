@@ -29,7 +29,7 @@ vector<int>Sort_by_Igoshkina(vector<int>data)
     return data;
 
 }
-vector<double>Sort_by_Igoshkina(vector<double>data)
+vector<double>Sort_by_Igoshkina_d(vector<double>data)
 {
     if (!data.empty()) {
         int n = data.size();
