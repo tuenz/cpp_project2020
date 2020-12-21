@@ -39,6 +39,9 @@
     <ClCompile Include="Quick_sort_by_Byankina.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Selection_Sort_by_Igoshkina.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataSets.h">
