@@ -6,7 +6,7 @@ using namespace std;
 
 // Просеиваем элементы
 template <typename T>
-void sow_elements(vector<T>& numbers, int n, int i) {
+void sow_elements_makarov(vector<T>& numbers, int n, int i) {
 
     int largest = i;
 
@@ -30,7 +30,7 @@ void sow_elements(vector<T>& numbers, int n, int i) {
         swap(numbers[i], numbers[largest]);
 
         // Рекурсивно проосеиваем элементы
-        sow_elements(numbers, n, largest);
+        sow_elements_makarov(numbers, n, largest);
 
     }
 
@@ -39,11 +39,11 @@ void sow_elements(vector<T>& numbers, int n, int i) {
 
 // Основная функция сортировки 
 template <typename T>
-void heapsort_algo(vector<T>& sequence, int n) {
+void heapsort_algo_makarov(vector<T>& sequence, int n) {
 
     // Группировка массива
     for (int i = n / 2 - 1; i >= 0; i--) {
-        sow_elements(sequence, n, i);
+        sow_elements_makarov(sequence, n, i);
     }
 
     // Итерациями прорабатываем элементы в массиве
@@ -53,7 +53,7 @@ void heapsort_algo(vector<T>& sequence, int n) {
         swap(sequence[0], sequence[i]);
 
         // Группируем оставшиеся элементы
-        sow_elements(sequence, i, 0);
+        sow_elements_makarov(sequence, i, 0);
     }
 
 }
@@ -68,20 +68,20 @@ vector<int> heapsort_by_makarov(vector<int> data)
     size_t n = data.size();
 
     // Запуск алгоритм
-    heapsort_algo(data, n);
+    heapsort_algo_makarov(data, n);
 
     return data;
 
 }
 
-vector<double> heapsort_by_makarov_double(vector<double> data)
+vector<double> heapsort_by_makarov_d(vector<double> data)
 {
 
     // Размер массива 
     size_t n = data.size();
 
     // Запуск алгоритм
-    heapsort_algo(data, n);
+    heapsort_algo_makarov(data, n);
 
     return data;
 

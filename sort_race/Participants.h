@@ -18,4 +18,4 @@ std::vector<double> SelectionSort_by_Igoshkina(std::vector<double> data);
 
 // makarov, heapsort
 std::vector<int> heapsort_by_makarov(std::vector<int> data);
-std::vector<double> heapsort_by_makarov_double(std::vector<double> data);
+std::vector<double> heapsort_by_makarov_d(std::vector<double> data);
