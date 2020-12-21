@@ -55,6 +55,7 @@ int main()
         RUN(Insertion_sort_Stepuro);
         RUN(heapsort_by_makarov_double);
         RUN(QuickSort_by_Byankina);
+        RUN(SelectionSort_by_Igoshkina);
 
 
         cout << endl << "**************************" << endl << endl;
