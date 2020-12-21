@@ -6,7 +6,7 @@ void Insertion_Stepuro(vector<T>& data)
 {
 	T bufer = 0; //временное хранилище элементов
 	int j = 0;
-	for (int i = 1; i < (T)data.size(); i++)
+	for (int i = 1; i < (int)data.size(); i++)
 	{ //цикл выделения элемента из массива
 		bufer = data[i];
 		for (j = i - 1; (j >= 0) && (data[j] > bufer); j--)
