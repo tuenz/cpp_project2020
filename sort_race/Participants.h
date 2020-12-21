@@ -11,3 +11,9 @@ std::vector<int> merge_sort_by_danilova(std::vector<int> data);
 std::vector<double> merge_sort_by_danilova(std::vector<double> data);
 std::vector<int> Insertion_sort_Stepuro(std::vector<int> data);
 std::vector<double> Insertion_sort_Stepuro(std::vector<double> data);
+std::vector<int> QuickSort_by_Byankina(std::vector<int> data);
+std::vector<double> QuickSort_by_Byankina(std::vector<double> data);
+
+// makarov, heapsort
+std::vector<int> heapsort_by_makarov(std::vector<int> data);
+std::vector<double> heapsort_by_makarov_double(std::vector<double> data);

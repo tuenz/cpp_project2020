@@ -27,6 +27,6 @@ std::vector<DataSet<double>> GenerateDoubleDataSets()
        { "just doubles", GenerateDoubleData() },
        { "Danilova team-random doubles, size=10", GenerateDoublesDanilova(10)},
        { "Danilova team-random doubles, size=100", GenerateDoublesDanilova(100)},
-        { "Danilova team-random doubles, size=1000", GenerateDoublesDanilova(1000)},
+       { "Danilova team-random doubles, size=1000", GenerateDoublesDanilova(1000)},
     };
 }
